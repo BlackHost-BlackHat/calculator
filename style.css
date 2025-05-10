@@ -1,0 +1,32 @@
+body{
+    display:flex;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    justify-content: center;
+    align-items: center;
+}
+
+#corpI{
+    display:flex;
+    flex-direction: column;
+    background-color: aqua;
+    width:500px;
+    height: 500px;
+    margin-top:150px;
+    border:8px solid black
+}
+
+#outputII{
+    display:flex;
+    width:100%;
+    height:100px;
+    background-color: rgb(94, 12, 172);
+}
+
+#inputIII{
+    display:flex;
+    width:100%;
+    height:80%;
+    background-color: orange;
+}
