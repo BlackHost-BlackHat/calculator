@@ -7,12 +7,19 @@ body{
     align-items: center;
 }
 
+button{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    font-size:30px;
+}
+
 #corpI{
     display:flex;
     flex-direction: column;
     background-color: aqua;
     width:500px;
-    height: 500px;
+    height: 600px;
     margin-top:150px;
     border:8px solid black
 }
@@ -26,7 +33,23 @@ body{
 
 #inputIII{
     display:flex;
+    justify-content: center;
     width:100%;
-    height:80%;
+    height:85%;
     background-color: orange;
+}
+
+.operatori{
+    display: flex;
+    justify-content: center;
+    /* align-items:center; */
+    flex-wrap:wrap;
+    gap:10px;
+    column-gap: 20px;
+    margin-left:15px;
+    width:450px;
+}
+
+.egal{
+   justify-self: flex-end;
 }
