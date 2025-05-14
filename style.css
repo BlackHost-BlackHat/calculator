@@ -26,6 +26,8 @@ button{
 
 #outputII{
     display:flex;
+    align-items: center;
+    justify-content: end;
     width:100%;
     height:100px;
     background-color: rgb(94, 12, 172);
@@ -35,7 +37,9 @@ button{
     display:flex;
     justify-content: center;
     width:100%;
-    height:85%;
+    height:auto;
+    flex:1;
+
     background-color: orange;
 }
 
@@ -52,4 +56,12 @@ button{
 
 .egal{
    justify-self: flex-end;
+   
+}
+
+.afisare{
+    font-size:80px;
+    margin:0;
+    padding:0;
+    margin-right: 50px;
 }

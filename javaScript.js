@@ -1,3 +1,4 @@
+/*
 // let rezultat=0,semn,cifra=null,cifra2=null,reset=0,previous=0
 
 // const button=document.querySelectorAll("button")
@@ -56,8 +57,10 @@
 // }
 
 // input()
+*/
 
-let rezultat=cifra=numar1=numar2=operand=ultimaApasare=null,stare=0
+
+let rezultat=0,cifra=numar1=numar2=operand=ultimaApasare=null,stare=0,pct=0;
 //stare=1- s-a itnrodus primul operator/stare=2-s-a introdus acelasi operator
 const button=document.querySelectorAll("button");
 
@@ -68,7 +71,6 @@ function calcul(a, op, b) {
         case '*': return a * b;
         case '/': return b === 0 ? NaN : a / b;
         case '%': return a % b;
-        case '+/-': return -a;
         default: return a;
     }
 }
@@ -76,40 +78,59 @@ function calcul(a, op, b) {
 //dupa egal daca apesi un alt numar concateneaza
 
 function input(){
+    const afis=document.querySelector(".afisare");
     button.forEach( (buton) =>{
      buton.addEventListener( "click", () =>{
      let val=buton.textContent
      
     if(buton.classList.contains("cifra")){
         const cifra=Number(val);
-        if(stare===0 || stare===1){
-            //primul numar
+        if(stare===0 || stare===1){ //primul numar
+            if(pct==1){
+            numar1+=0,1*cifra; //gandeste logica pentru punct sa-l transformi in float
+            }else{
             numar1=(numar1 ?? 0)*10+cifra; //?? daca numar1 este null atunci va primi valoarea 0
+            }
             stare=1;ultimaApasare=["numar"]
             console.log("Număr curent:", numar1);
+            afis.textContent=numar1;
         }else if(stare ===2 || stare ===3){
             //al doilea numar
             numar2=(numar2 ?? 0)*10+cifra;
             stare=3;
             ultimaApasare=["numar"]
             console.log("Număr 2 =", numar2);
+            afis.textContent=numar2;
         }
 
+    }else if(val=='.' && pct==0){
+     pct=1
     }else if(buton.classList.contains("operator")){
         if(val==='C'){
-            rezultat=numar1=numar2=operand=null;
+            rezultat=0;numar1=numar2=operand=null;
             stare=0;  console.log("Reset complet");
+            afis.textContent=rezultat;
+        }else if (val === '+/-') {
+            if (stare < 2) {
+              numar1 = -numar1;
+              afis.textContent = numar1;
+            }else{
+                numar2 = -numar2;
+                afis.textContent = numar2;
+            }
         }else if (val === "=" && numar1 != null && operand != null && numar2 != null) {
             rezultat = calcul(numar1, operand, numar2);
             console.log(`Rezultat final: ${numar1} ${operand} ${numar2} = ${rezultat}`);
             numar1 = rezultat;
             numar2 = null;
             operand = null;
-            stare = 2;
+            stare = 1;
+            afis.textContent=rezultat;
         }else if(ultimaApasare.at(0)=="Operand" && ultimaApasare.at(1)==val){
             rezultat = calcul(numar1, val, numar1);
             console.log(`Operator dublu: ${numar1} ${val} ${numar1} = ${rezultat}`);
             numar1 = rezultat;
+            afis.textContent=rezultat;
          } else if (numar1 != null && numar2 != null && operand != null) {
             rezultat = calcul(numar1, operand, numar2);
             console.log(`Auto-calc: ${numar1} ${operand} ${numar2} = ${rezultat}`);
@@ -118,6 +139,7 @@ function input(){
             operand = val;
             stare = 2;
             ultimaApasare = ["Operand", val];
+            afis.textContent=rezultat;
         }else{
             operand=val;
             stare=2; ultimaApasare=["Operand",operand]
@@ -125,6 +147,7 @@ function input(){
         }
     }
      })
+
     })
 }
 
