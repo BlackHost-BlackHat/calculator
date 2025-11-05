@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Section */
+        .profile p {
+            text-align: justify;
+            color: #555;
+        }
+
+        /* Experience and Education */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .item-date {
+            color: #777;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .item-subtitle {
+            color: #667eea;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .item-description {
+            color: #555;
+            margin-left: 20px;
+        }
+
+        .item-description ul {
+            list-style-position: outside;
+            margin-left: 20px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .project {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .project h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            font-size: 0.9em;
+            color: #777;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header .title {
+                font-size: 1.1em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+
+            .header {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Your Full Name</h1>
+            <p class="title">Job Title / Professional Role</p>
+            <div class="contact-info">
+                <a href="mailto:your.email@example.com">📧 your.email@example.com</a>
+                <a href="tel:+1234567890">📱 +1 (234) 567-890</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
+                <span>📍 City, Country</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Professional Summary -->
+            <section class="section profile">
+                <h2 class="section-title">Professional Summary</h2>
+                <p>
+                    Results-driven professional with X+ years of experience in [your field].
+                    Passionate about [key areas of expertise] with a proven track record of
+                    [key achievements]. Strong background in [relevant skills] and committed
+                    to delivering high-quality solutions that drive business success.
+                </p>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Senior Position Title</h3>
+                        <span class="item-date">Jan 2022 - Present</span>
+                    </div>
+                    <p class="item-subtitle">Company Name • Location</p>
+                    <div class="item-description">
+                        <ul>
+                            <li>Led development of key features that improved performance by X%</li>
+                            <li>Managed cross-functional team of Y developers and designers</li>
+                            <li>Implemented best practices resulting in Z% reduction in bugs</li>
+                            <li>Collaborated with stakeholders to define product requirements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Mid-Level Position Title</h3>
+                        <span class="item-date">Jun 2019 - Dec 2021</span>
+                    </div>
+                    <p class="item-subtitle">Previous Company • Location</p>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed and maintained applications serving X+ users</li>
+                            <li>Optimized database queries reducing load time by Y%</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                            <li>Participated in agile development processes and sprint planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Junior Position Title</h3>
+                        <span class="item-date">Jan 2017 - May 2019</span>
+                    </div>
+                    <p class="item-subtitle">First Company • Location</p>
+                    <div class="item-description">
+                        <ul>
+                            <li>Built responsive web applications using modern frameworks</li>
+                            <li>Collaborated with design team to implement UI/UX improvements</li>
+                            <li>Wrote unit tests achieving X% code coverage</li>
+                            <li>Fixed bugs and provided technical support to clients</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+
+                <div class="item">
+                    <div class="item-header">
+                        <h3 class="item-title">Bachelor/Master of Science in Computer Science</h3>
+                        <span class="item-date">2013 - 2017</span>
+                    </div>
+                    <p class="item-subtitle">University Name • Location</p>
+                    <div class="item-description">
+                        <ul>
+                            <li>GPA: 3.8/4.0</li>
+                            <li>Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering</li>
+                            <li>Honors: Dean's List, Academic Excellence Award</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>JavaScript/TypeScript</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Web Technologies</h3>
+                        <ul>
+                            <li>React.js / Vue.js</li>
+                            <li>Node.js / Express</li>
+                            <li>HTML5 / CSS3</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>MySQL</li>
+                            <li>Redis</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Tools & Others</h3>
+                        <ul>
+                            <li>Git / GitHub</li>
+                            <li>Docker / Kubernetes</li>
+                            <li>AWS / Azure</li>
+                            <li>Agile / Scrum</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project">
+                    <h3>Project Name 1</h3>
+                    <p>
+                        Description of your impressive project. Explain what it does,
+                        what problem it solves, and your role in the project. Highlight
+                        key achievements and impact.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> React, Node.js, MongoDB, AWS</p>
+                </div>
+
+                <div class="project">
+                    <h3>Project Name 2</h3>
+                    <p>
+                        Another notable project showcasing your skills. Mention any metrics,
+                        such as number of users, performance improvements, or recognition received.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> Python, Django, PostgreSQL, Docker</p>
+                </div>
+
+                <div class="project">
+                    <h3>Project Name 3</h3>
+                    <p>
+                        Open source contribution or personal project that demonstrates your
+                        passion for technology and continuous learning.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> TypeScript, Vue.js, Express, Redis</p>
+                </div>
+            </section>
+
+            <!-- Certifications (Optional) -->
+            <section class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="item">
+                    <div class="item-description">
+                        <ul>
+                            <li>AWS Certified Solutions Architect - 2023</li>
+                            <li>Certified Scrum Master (CSM) - 2022</li>
+                            <li>Google Cloud Professional Developer - 2021</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
